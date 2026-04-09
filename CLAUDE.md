@@ -77,6 +77,18 @@ Create `.claude/settings.local.json` with:
 
 Note: `settings.local.json` is gitignored and stays local to each user's machine.
 
+## Status Line
+
+A global status line displays real-time session info at the bottom of Claude Code:
+
+```
+ctx [██████░░░░] 58%  ⏱ 12m  $1.24  main  S3/5·A1·GEN  T:34
+```
+
+Shows context window usage (color-coded), session duration, cost, git branch, build pipeline progress, and turn count.
+
+During `/build`, the orchestrator writes `.claude/build-state.json` to communicate pipeline state (sprint, attempt, stage) to the status line. This file is gitignored and cleaned up after the build completes.
+
 ## Codex Review (Optional)
 
 The build pipeline includes an optional independent review step using OpenAI's Codex CLI. If `codex` is not installed, the step is skipped automatically.
