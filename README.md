@@ -20,8 +20,8 @@ Then open Claude Code and run:
 When the build finishes:
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 ## Branches
@@ -82,21 +82,35 @@ Node.js runs the JavaScript projects you'll be building.
 - Or install via terminal:
   - **Mac** (with Homebrew): `brew install node`
   - **Windows**: Use the installer from the link above
-  - **Linux**: `sudo apt install nodejs npm`
+  - **Linux**: `sudo apt install nodejs`
 
 Verify it's installed:
 ```bash
 node --version   # should show v18 or higher
-npm --version
+pnpm --version
 ```
 
-### 3. Claude Code
+### 3. pnpm
+
+pnpm is the package manager used by this project (a faster, more efficient alternative to npm).
+
+**Install:**
+```bash
+npm install -g pnpm
+```
+
+Verify it's installed:
+```bash
+pnpm --version
+```
+
+### 4. Claude Code
 
 Claude Code is the AI coding agent that powers the entire build pipeline.
 
 **Install:**
 ```bash
-npm install -g @anthropic-ai/claude-code
+pnpm add -g @anthropic-ai/claude-code
 ```
 
 **Authenticate** (you'll need an Anthropic account or API key):
@@ -113,13 +127,13 @@ Verify it's installed:
 claude --version
 ```
 
-### 4. (Optional) OpenAI Codex CLI
+### 5. (Optional) OpenAI Codex CLI
 
 Codex CLI provides an independent code review from a different AI model (OpenAI) so Claude doesn't just review its own code. **This is optional** — the build pipeline works fine without it.
 
 **Install:**
 ```bash
-npm install -g @openai/codex
+pnpm add -g @openai/codex
 ```
 
 **Authenticate** (you'll need an OpenAI API key):
@@ -138,7 +152,7 @@ codex --version
 
 Run this to verify everything at once:
 ```bash
-git --version && node --version && claude --version && codex --version 2>/dev/null || echo "Codex not installed (optional)"
+git --version && node --version && pnpm --version && claude --version && codex --version 2>/dev/null || echo "Codex not installed (optional)"
 ```
 
 You should see version numbers for at least Git, Node, and Claude Code.

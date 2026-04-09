@@ -24,9 +24,9 @@ This is the Mindvalley Bootcamp Demo — an AI-powered build pipeline that takes
 5. Run `/build` — Claude builds the entire project sprint by sprint, no intervention needed
 6. When the build finishes, install and run:
    ```bash
-   npm install
-   npm run build    # production build
-   npm run dev      # development server
+   pnpm install
+   pnpm build    # production build
+   pnpm dev      # development server
    ```
 
 ## Commands
@@ -81,7 +81,7 @@ Note: `settings.local.json` is gitignored and stays local to each user's machine
 
 The build pipeline includes an optional independent review step using OpenAI's Codex CLI. If `codex` is not installed, the step is skipped automatically.
 
-To install: `npm i -g @openai/codex` then `codex login` to authenticate.
+To install: `pnpm add -g @openai/codex` then `codex login` to authenticate.
 
 To use standalone: `/codex-review` reviews all uncommitted changes.
 
