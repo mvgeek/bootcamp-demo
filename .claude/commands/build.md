@@ -10,12 +10,22 @@ should be built, tested, and working.
 2. Read contracts/ and reviews/ to find which sprints are already done
 3. Check if a dev server script exists in package.json (you'll need it running for evaluation)
 4. Determine which sprint to start from (first sprint without a passing review)
+5. Count total sprints and initialize the build state file:
+   ```bash
+   mkdir -p .claude
+   echo '{"sprint":1,"total_sprints":N,"attempt":1,"stage":"GEN"}' > .claude/build-state.json
+   ```
 
 ## The loop
 
 For each sprint, repeat this cycle:
 
 ### Step 1 — Generate
+
+Update the build state file before starting:
+```bash
+echo '{"sprint":N,"total_sprints":T,"attempt":A,"stage":"GEN"}' > .claude/build-state.json
+```
 
 Spawn a **generator agent** using the Agent tool. Give it a self-contained prompt
 that includes:
@@ -30,6 +40,11 @@ listing what it built and any decisions it made.
 
 ### Step 2 — Evaluate
 
+Update the build state:
+```bash
+echo '{"sprint":N,"total_sprints":T,"attempt":A,"stage":"EVAL"}' > .claude/build-state.json
+```
+
 After the generator finishes, spawn a **separate evaluator agent** using the
 Agent tool. Fresh context — this is critical. The evaluator must not share
 context with the generator. Give it a self-contained prompt that includes:
@@ -42,6 +57,11 @@ The evaluator MUST write reviews/sprint-{N}-review.md with a clear
 **PASS** or **FAIL** verdict on the first line after the title.
 
 ### Step 3 — Codex Review (Optional — Independent Second Opinion)
+
+Update the build state:
+```bash
+echo '{"sprint":N,"total_sprints":T,"attempt":A,"stage":"CODEX"}' > .claude/build-state.json
+```
 
 **This step is optional.** First, check if Codex CLI is installed by running:
 
@@ -65,6 +85,11 @@ Save the Codex output to `reviews/codex-sprint-{N}-review.md`.
 
 ### Step 4 — Decide
 
+Update the build state:
+```bash
+echo '{"sprint":N,"total_sprints":T,"attempt":A,"stage":"DECIDE"}' > .claude/build-state.json
+```
+
 Read the evaluator review at `reviews/sprint-{N}-review.md`.
 If Codex ran, also read `reviews/codex-sprint-{N}-review.md`.
 
@@ -85,6 +110,11 @@ If Codex ran, also read `reviews/codex-sprint-{N}-review.md`.
 
 Write a final summary to the user: what was built, how many attempts each
 sprint took, and any known limitations noted in the contracts.
+
+Clean up the build state file:
+```bash
+rm -f .claude/build-state.json
+```
 
 ---
 

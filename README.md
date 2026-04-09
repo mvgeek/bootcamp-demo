@@ -40,6 +40,18 @@ pnpm dev
 | `/build` | Build the entire project automatically with evaluation loop |
 | `/codex-review` | (Optional) Independent code review via OpenAI Codex CLI |
 
+## Status Line
+
+When you run `/build`, a status line at the bottom of Claude Code shows you live progress:
+
+```
+ctx [██████░░░░] 58%  ⏱ 12m  $1.24  main  S3/5·A1·GEN  T:34
+```
+
+This tells you at a glance: context window usage, session time, cost so far, which git branch you're on, and where the build pipeline is (Sprint 3 of 5, Attempt 1, currently Generating).
+
+The status line is configured globally — it works in every project, not just this one. Outside of `/build`, the pipeline indicator disappears and you still see context, cost, branch, and turns.
+
 ## Optional: YOLO Mode
 
 Auto-approve all Claude permissions so `/build` runs uninterrupted. Create `.claude/settings.local.json`:
