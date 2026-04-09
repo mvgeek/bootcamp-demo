@@ -64,7 +64,8 @@ Create `.claude/settings.local.json` with:
   "permissions": {
     "allow": [
       "Bash(*)", "Edit(*)", "Write(*)", "Read(*)",
-      "Glob(*)", "Grep(*)", "WebFetch(*)", "WebSearch(*)", "Agent(*)"
+      "Glob(*)", "Grep(*)", "WebFetch(*)", "WebSearch(*)",
+      "NotebookEdit(*)", "ExitPlanMode(*)", "Agent(*)"
     ]
   }
 }
