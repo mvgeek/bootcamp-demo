@@ -65,7 +65,8 @@ Create `.claude/settings.local.json` with:
     "allow": [
       "Bash(*)", "Edit(*)", "Write(*)", "Read(*)",
       "Glob(*)", "Grep(*)", "WebFetch(*)", "WebSearch(*)",
-      "NotebookEdit(*)", "ExitPlanMode(*)", "Agent(*)"
+      "NotebookEdit(*)", "ExitPlanMode(*)", "Agent(*)",
+      "mcp__claude-in-chrome__*"
     ]
   }
 }
@@ -87,3 +88,10 @@ To use standalone: `/codex-review` reviews all uncommitted changes.
 ## Prerequisites
 
 See the [README](README.md) for detailed installation instructions for Git, Node.js, Claude Code, and (optionally) Codex CLI.
+
+### Claude in Chrome Extension
+
+The build and review commands can use browser automation to verify your running app. This requires the **Claude in Chrome** MCP extension:
+
+1. Install the [Claude in Chrome](https://chromewebstore.google.com/detail/claude-in-chrome) extension from the Chrome Web Store
+2. Enable it in Chrome and ensure it's running before starting a build
