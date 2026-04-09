@@ -3,7 +3,7 @@
 **Attempt**: 1
 
 ## Build Verification
-`npm run build` succeeds with no errors. Output: 3 files (index.html 8.11 kB, CSS 10.62 kB, JS 128.18 kB). Build completes in ~70ms.
+`pnpm build` succeeds with no errors. Output: 3 files (index.html 8.11 kB, CSS 10.62 kB, JS 128.18 kB). Build completes in ~70ms.
 
 ## Acceptance Criteria
 

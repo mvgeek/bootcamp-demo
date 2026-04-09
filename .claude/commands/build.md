@@ -50,7 +50,7 @@ which codex 2>/dev/null
 ```
 
 - **If `codex` is NOT found**: Skip this step entirely. Log a note to the user:
-  "Codex CLI not installed — skipping independent review. Install with `npm i -g @anthropic-ai/codex` if you want a second-opinion review from OpenAI."
+  "Codex CLI not installed — skipping independent review. Install with `pnpm add -g @anthropic-ai/codex` if you want a second-opinion review from OpenAI."
   Proceed directly to Step 4 using only the evaluator's review.
 
 - **If `codex` IS found**: Run the independent review:

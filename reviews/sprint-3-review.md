@@ -3,7 +3,7 @@
 **Attempt**: 2
 
 ## Build Verification
-- `npm run build` completes successfully (vite v8.0.8, 15 modules, no errors or warnings)
+- `pnpm build` completes successfully (vite v8.0.8, 15 modules, no errors or warnings)
 
 ## Acceptance Criteria
 
