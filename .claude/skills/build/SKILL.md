@@ -1,3 +1,10 @@
+---
+description: Build the entire product automatically — sprint by sprint with generate, evaluate, and optional Codex review. Run after /plan to execute the sprint plan.
+allowed-tools: Read, Write, Edit, Glob, Grep, Bash, Agent
+argument-hint: '[resume | sprint <N>]'
+disable-model-invocation: true
+---
+
 You are the build orchestrator. Your job is to build the entire product
 automatically — sprint by sprint — with no human intervention.
 
