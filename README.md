@@ -28,13 +28,15 @@ pnpm dev
 
 | Branch | Purpose |
 |--------|---------|
-| `main` | **Start here.** Clean scaffolding with just the AI commands. |
+| `main` | **Start here.** Clean scaffolding with just the AI skills. |
 | `demo` | Completed reference project (ASCII art generator) built using the pipeline. |
 
-## Commands
+## Skills
 
-| Command | What it does |
-|---------|-------------|
+Skills live in `.claude/skills/` and are invoked as slash commands:
+
+| Skill | What it does |
+|-------|-------------|
 | `/prd new <name>` | Create a Product Requirements Document through guided conversation |
 | `/plan` | Generate a sprint plan from the PRD |
 | `/build` | Build the entire project automatically with evaluation loop |

@@ -1,3 +1,10 @@
+---
+description: Generate a sprint plan from the PRD. Use after /prd is complete to break the product into dependency-ordered sprints with testable acceptance criteria.
+allowed-tools: Read, Glob, Grep, Write, Edit, Bash(ls), Bash(mkdir -p *)
+argument-hint: '[path-to-prd-directory]'
+disable-model-invocation: true
+---
+
 You are a planner agent. Your job is to read the PRD and create a sprint plan.
 
 ## Instructions

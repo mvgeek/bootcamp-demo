@@ -4,11 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-This is the Mindvalley Bootcamp Demo — an AI-powered build pipeline that takes you from idea to working product using Claude Code commands.
+This is the Mindvalley Bootcamp Demo — an AI-powered build pipeline that takes you from idea to working product using Claude Code skills.
 
 ## Branches
 
-- **`main`** — The scaffolding. Clone this branch to start fresh. It contains only the AI commands (`/prd`, `/plan`, `/build`, `/codex-review`), this file, and `.gitignore`. No project code. **Bootcamp participants should clone this branch.**
+- **`main`** — The scaffolding. Clone this branch to start fresh. It contains only the AI skills (`/prd`, `/plan`, `/build`, `/codex-review`) in `.claude/skills/`, this file, and `.gitignore`. No project code. **Bootcamp participants should clone this branch.**
 - **`demo`** — The complete reference project (an ASCII art generator) built using the pipeline. Switch to this branch to see the finished result, including source code, PRD, sprint plan, contracts, and reviews.
 
 ## Getting Started (Bootcamp Participants)
@@ -29,10 +29,12 @@ This is the Mindvalley Bootcamp Demo — an AI-powered build pipeline that takes
    pnpm dev      # development server
    ```
 
-## Commands
+## Skills
 
-| Command | What it does |
-|---------|-------------|
+Skills live in `.claude/skills/` and are invoked as slash commands:
+
+| Skill | What it does |
+|-------|-------------|
 | `/prd new <name>` | Create a new Product Requirements Document through guided conversation |
 | `/plan` | Generate a sprint plan from the PRD |
 | `/build` | Build the entire project automatically — sprint by sprint with evaluation |
@@ -40,7 +42,7 @@ This is the Mindvalley Bootcamp Demo — an AI-powered build pipeline that takes
 
 ## How the Build Pipeline Works
 
-The `/build` command runs a loop for each sprint:
+The `/build` skill runs a loop for each sprint:
 
 1. **Generate** — A Claude agent implements the sprint
 2. **Evaluate** — A separate Claude agent rigorously tests it
@@ -103,7 +105,7 @@ See the [README](README.md) for detailed installation instructions for Git, Node
 
 ### Claude in Chrome Extension
 
-The build and review commands can use browser automation to verify your running app. This requires the **Claude in Chrome** MCP extension:
+The build and review skills can use browser automation to verify your running app. This requires the **Claude in Chrome** MCP extension:
 
 1. Install the [Claude in Chrome](https://chromewebstore.google.com/detail/claude-in-chrome) extension from the Chrome Web Store
 2. Enable it in Chrome and ensure it's running before starting a build
